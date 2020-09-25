@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 //Endpoint for random recipe api generator
-app.get('/api/random-recipe', randomRecipeCtrl.getRandomRecipe);
+app.get('/api/random-recipes', randomRecipeCtrl.getRandomRecipe);
 
 //Endpoint for api
 app.get('/api/recipes', recipeCtrl.getRecipes);

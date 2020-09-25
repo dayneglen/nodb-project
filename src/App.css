@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+/* Recipe Container */
+
+
+
+.ingredient-container {
+  display: flex;
+
+}
+
+.recipe-img {
+  height: 150px;
+  width: 150px;
+}
+
+.ingredient-list {
+  list-style: none;
+}
