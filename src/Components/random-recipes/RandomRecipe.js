@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RandomRecipe = (props) => {
-    let { meal, mealThumb, ingredients, quantity, source} = props.recipe;
+    let { meal, mealThumb, ingredients, quantity, source } = props.recipe;
 
     const ingredientList = ingredients.map((ingredient, i) => (
         <li className='ingredient-list' key={i}>{ingredient}</li>
@@ -11,12 +11,12 @@ const RandomRecipe = (props) => {
     ))
 
     const recipeReset = () => {
-        let { addRecipe, recipe, newRecipes} = props;
+        let { addRecipe, recipe, newRecipes } = props;
         addRecipe(recipe);
         newRecipes();
     }
 
-    return(
+    return (
         <section className='recipe-container'>
             <h2>{meal}</h2>
             <a href={source}>

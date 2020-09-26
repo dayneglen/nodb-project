@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import RandomRecipe from './RandomRecipe';
 import axios from 'axios';
 
 class RecipeGenerator extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             generatedRecipes: []
@@ -16,15 +16,15 @@ class RecipeGenerator extends Component {
 
     getRandomRecipe = () => {
         axios.get('/api/random-recipes').then(res => {
-            this.setState({generatedRecipes: res.data});
+            this.setState({ generatedRecipes: res.data });
         }).catch(err => console.log(err));
     }
-    
-    render(){
+
+    render() {
         const randomRecipe = this.state.generatedRecipes.map((recipe, i) => (
-            <RandomRecipe key={i} recipe={recipe} newRecipes={this.getRandomRecipe} addRecipe={this.props.addRecipe}/>
+            <RandomRecipe key={i} recipe={recipe} newRecipes={this.getRandomRecipe} addRecipe={this.props.addRecipe} />
         ))
-        return(
+        return (
             <section>
                 {randomRecipe}
             </section>

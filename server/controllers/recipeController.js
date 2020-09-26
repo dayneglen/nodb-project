@@ -28,12 +28,13 @@ module.exports = {
 
         res.status(200).send(recipes);
     },
-    addIngredient(req, res) {
+    changeName(req, res) {
         let { id } = req.params;
-        let { ingredient, quantity } = req.body;
-        let recipeToChange = recipes.find((element) => element.id === +id);
-        recipeToChange.ingredients.push(ingredient);
-        recipeToChange.quantity.push(quantity);
+        let { meal } = req.body;
+        console.log(req.body)
+        let nameToChange = recipes.find((element) => element.id === +id);
+
+        nameToChange.meal = meal;
 
         res.status(200).send(recipes);
     }

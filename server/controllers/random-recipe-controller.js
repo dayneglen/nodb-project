@@ -1,24 +1,24 @@
 const axios = require('axios');
 
 module.exports = {
-    getRandomRecipe(req, res)  {
+    getRandomRecipe(req, res) {
         const recipes = [];
 
         axios.get('https://www.themealdb.com/api/json/v1/1/random.php').then(result => {
             let { meals } = result.data;
             let ingredients = [];
             let quantity = [];
-            for (let key in meals[0]){
+            for (let key in meals[0]) {
                 if (key.includes('strIngredient')) {
-                    if (meals[0][key].trim()){
+                    if (meals[0][key].trim()) {
                         ingredients.push(meals[0][key]);
                     }
-                } 
+                }
                 if (key.includes('strMeasure')) {
                     if (meals[0][key].trim()) {
                         quantity.push(meals[0][key]);
                     }
-                }  
+                }
             }
             let recipe = {
                 meal: meals[0].strMeal,

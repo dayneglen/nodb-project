@@ -13,6 +13,6 @@ app.get('/api/random-recipes', randomRecipeCtrl.getRandomRecipe);
 app.get('/api/recipes', recipeCtrl.getRecipes);
 app.post('/api/recipes', recipeCtrl.addRecipe);
 app.delete('/api/recipes/:id', recipeCtrl.deleteRecipe);
-app.put('/api/recipes/:id', recipeCtrl.addIngredient);
+app.put('/api/recipes/:id', recipeCtrl.changeName);
 
 app.listen('3333', () => console.log('Listening on port 3333'));
