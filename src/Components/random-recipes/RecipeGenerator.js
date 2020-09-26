@@ -25,7 +25,7 @@ class RecipeGenerator extends Component {
             <RandomRecipe key={i} recipe={recipe} newRecipes={this.getRandomRecipe} addRecipe={this.props.addRecipe} />
         ))
         return (
-            <section>
+            <section className='container'>
                 {randomRecipe}
             </section>
         )

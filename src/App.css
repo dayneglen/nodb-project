@@ -1,14 +1,67 @@
-.App {
-  text-align: center;
+:root {
+  --buttons: #05386B;
+  --forest-green: #379683;
+  --green: #5cdb95;
+  --light-green: #8ee4af;
+  --tan: #edf5e1;
 }
+
+* {
+  box-sizing: border-box;
+  
+}
+
+.App {
+  font-family: 'Raleway', sans-serif;
+  background-color: var(--light-green);
+}
+
+.container {
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.btn {
+  outline: none;
+  border: none;
+}
+/* Header Section */
+
+.site-header {
+  background-color: var(--tan);
+  height: 7vh;
+}
+
+.site-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 7vh;
+}
+
 
 /* Recipe Container */
 
-
-
-.ingredient-container {
+.recipe-container {
+  margin-top: 20px;
   display: flex;
+  flex-direction: column;
+  background-color: var(--tan);
+  padding: 15px 0;
+  border-radius: 10px;
+  position: relative;
+}
 
+.meal-name {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.recipe-link {
+  margin: 0 auto;
+  margin-bottom: 15px;
 }
 
 .recipe-img {
@@ -16,6 +69,69 @@
   width: 150px;
 }
 
+.ingredient-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .ingredient-list {
   list-style: none;
+}
+
+.ingredients {
+  margin-left: 35px;
+}
+
+.button-container {
+  text-align: center;
+  bottom: 10px;
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  
+}
+
+.add-btn {
+  padding: 10px 15px;
+  background-color: var(--buttons);
+  color: var(--tan);
+}
+
+.edit-btn {
+  
+}
+
+/* User Recipe Welcome */
+
+.user-recipes {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Name Form */
+
+.name-form {
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.name-form input {
+  height: 35px;
+  background-color: #edf5e1;
+  border: 1px solid #05386B;
+}
+
+@media(min-width: 950px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vh;
+  }
+  .recipe-container {
+    width: 375px;
+    margin-left: 10px;
+  }
 }

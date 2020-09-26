@@ -3,6 +3,7 @@ import Header from './Components/Header';
 import RecipeGenerator from './Components/random-recipes/RecipeGenerator';
 import RecipesCollection from './Components/user-recipes/RecipesCollection';
 import axios from 'axios';
+import './reset.css';
 import './App.css';
 
 
@@ -43,7 +44,7 @@ class App extends Component {
       <div className="App">
         <Header/>
         <RecipeGenerator addRecipe={this.addRecipe}/>
-        <h1>Your Recipes</h1>
+        <h1 className="user-recipes">Your Recipes</h1>
         <RecipesCollection recipes={this.state.selectedRecipes}
         deleteRecipe={this.removeRecipe}
         changeName={this.changeName}/>

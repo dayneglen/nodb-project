@@ -17,21 +17,21 @@ const RandomRecipe = (props) => {
     }
 
     return (
-        <section className='recipe-container'>
-            <h2>{meal}</h2>
-            <a href={source}>
+        <section className='recipe-container container'>
+            <h2 className='meal-name'>{meal}</h2>
+            <a href={source} className='recipe-link'>
                 <img src={mealThumb} alt={meal} className='recipe-img' />
             </a>
             <ul className='ingredient-container'>
-                <div>
+                <div className='quantity'>
                     {quantityList}
                 </div>
-                <div>
+                <div className='ingredients'>
                     {ingredientList}
                 </div>
             </ul>
             <section className='button-container'>
-                <button className='btn' onClick={recipeReset}>Add Recipe</button>
+                <button className='btn add-btn' onClick={recipeReset}>Add Recipe</button>
             </section>
         </section>
     )

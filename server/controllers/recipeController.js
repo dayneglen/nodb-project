@@ -1,6 +1,7 @@
 let recipes = [];
 let id = 1;
 
+
 module.exports = {
     getRecipes(req, res) {
         res.status(200).send(recipes);
@@ -15,7 +16,8 @@ module.exports = {
             mealThumb: mealThumb,
             ingredients: ingredients,
             quantity: quantity,
-            source: source
+            source: source,
+            favorite: false
         }
         recipes.push(recipe);
         id++;
@@ -37,5 +39,8 @@ module.exports = {
         nameToChange.meal = meal;
 
         res.status(200).send(recipes);
+    },
+    makeFavorite(req, res) {
+
     }
 }

@@ -10,7 +10,7 @@ const RecipesCollection = (props) => {
         changeName={props.changeName}/>
     ))
     return (
-        <section className='user-recipe'>
+        <section className='container'>
             {recipesDisplay}
         </section>
     )

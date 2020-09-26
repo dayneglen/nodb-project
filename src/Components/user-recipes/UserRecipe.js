@@ -4,11 +4,10 @@ class UserRecipe extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userInput: '',
+            userInput: this.props.recipe.meal,
             edit: false
         }
     }
-
     
     removeRecipe = () => {
         const { id } = this.props.recipe;
@@ -42,32 +41,29 @@ class UserRecipe extends Component {
             <li className='ingredient-list' key={i}>{quantity}</li>
         ))
        
-        
         return (
-            <section className='recipe-container'>
+            <section className='recipe-container container'>
                 {this.state.edit 
-                    ? <form>
+                    ? <form className='name-form'>
                         <input value={this.state.userInput} onChange={ (e) => this.handleInput(e)} />
-                        <button type='submit' onClick={this.editName}>Edit Name</button>
+                        <button className='btn add-btn'type='submit' onClick={this.editName}>Change Name</button>
                     </form>
-                : <h2>{meal}</h2>}
-                
-                <a href={source}>
+                : <h2 className='meal-name'>{meal}</h2>}
+                <a href={source} className='recipe-link'>
                     <img src={mealThumb} alt={meal} className='recipe-img' />
                 </a>
-        
                 <section className='ingredients'>
                     <ul className='ingredient-container'>
-                        <div>
+                        <div className='quantity'>
                             {quantityList}
                         </div>
-                        <div>
+                        <div className='ingredients'>
                             {ingredientList}
                         </div>
                     </ul>
                     <section className='button-container'>
-                        <button className='btn' onClick={this.removeRecipe}>Delete Recipe</button>
-                        <button className='btn' onClick={this.toggleEdit}>Edit Ingredients</button>
+                        <button className='btn add-btn user-btns' onClick={this.removeRecipe}>Delete Recipe</button>
+                        <button className='btn add-btn edit-btn' onClick={this.toggleEdit}>Edit Name</button>
                     </section>
                 </section> 
                    
