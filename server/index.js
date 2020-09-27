@@ -15,4 +15,8 @@ app.post('/api/recipes', recipeCtrl.addRecipe);
 app.delete('/api/recipes/:id', recipeCtrl.deleteRecipe);
 app.put('/api/recipes/:id', recipeCtrl.changeName);
 
+//Favorite Recipe endpoint
+app.put('/api/favorites/:id', recipeCtrl.toggleFavorite);
+app.get('/api/favorites', recipeCtrl.filterFavorite);
+
 app.listen('3333', () => console.log('Listening on port 3333'));

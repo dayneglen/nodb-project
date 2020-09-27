@@ -33,14 +33,23 @@ module.exports = {
     changeName(req, res) {
         let { id } = req.params;
         let { meal } = req.body;
-        console.log(req.body)
         let nameToChange = recipes.find((element) => element.id === +id);
 
         nameToChange.meal = meal;
 
         res.status(200).send(recipes);
     },
-    makeFavorite(req, res) {
+    toggleFavorite(req, res) {
+        let { id } = req.params;
+        let {isFavorite} = req.body;
+        let recipe = recipes.find((recipe) => recipe.id === +id);
 
+        recipe.favorite = isFavorite;
+        res.status(200).send(recipes);
+    },
+
+    filterFavorite(req, res) {
+        let filteredRecipes = recipes.filter(recipe => recipe.favorite);
+        res.status(200).send(filteredRecipes);
     }
 }

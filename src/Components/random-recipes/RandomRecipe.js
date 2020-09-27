@@ -17,7 +17,7 @@ const RandomRecipe = (props) => {
     }
 
     return (
-        <section className='recipe-container container'>
+        <section className='recipe-container'>
             <h2 className='meal-name'>{meal}</h2>
             <a href={source} className='recipe-link'>
                 <img src={mealThumb} alt={meal} className='recipe-img' />

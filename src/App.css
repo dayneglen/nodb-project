@@ -1,9 +1,6 @@
 :root {
   --buttons: #05386B;
-  --forest-green: #379683;
-  --green: #5cdb95;
-  --light-green: #8ee4af;
-  --tan: #edf5e1;
+  --header-backgrounds: #0A2540;
 }
 
 * {
@@ -13,7 +10,7 @@
 
 .App {
   font-family: 'Raleway', sans-serif;
-  background-color: var(--light-green);
+  background-color: var(#f8f8f8);
 }
 
 .container {
@@ -25,10 +22,14 @@
   outline: none;
   border: none;
 }
+
+.btn:hover {
+  cursor: pointer;
+}
 /* Header Section */
 
 .site-header {
-  background-color: var(--tan);
+  background-color: var(--header-backgrounds);
   height: 7vh;
 }
 
@@ -37,6 +38,7 @@
   font-size: 1.8rem;
   font-weight: bold;
   line-height: 7vh;
+  color: white;
 }
 
 
@@ -46,17 +48,21 @@
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  background-color: var(--tan);
+  background-color: #F6F9FC;
   padding: 15px 0;
   border-radius: 10px;
   position: relative;
+  padding-bottom: 15px;
+  width: 80vw;
+  box-shadow: 3px 3px 0 0.8px rgb(0,0,0,0.1);
 }
 
 .meal-name {
   text-align: center;
-  margin-bottom: 10px;
+  margin: 10px auto;
   font-size: 1.3rem;
   font-weight: bold;
+  max-width: 70%;
 }
 
 .recipe-link {
@@ -96,19 +102,35 @@
 .add-btn {
   padding: 10px 15px;
   background-color: var(--buttons);
-  color: var(--tan);
+  color: #fff;
 }
 
-.edit-btn {
-  
+.add-btn:hover {
+  background-color: #03498f;
 }
-
 /* User Recipe Welcome */
 
 .user-recipes {
   font-size: 1.8rem;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 15px;
+  background-color: var(--header-backgrounds);
+  color: white;
+  height: 5vh;
+  line-height: 5vh;
+  border-radius: 15px;
+
+}
+
+.user-recipe-container {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 30vh;
+}
+
+.user-recipes-display {
+  display: flex;
 }
 
 /* Name Form */
@@ -124,14 +146,72 @@
   border: 1px solid #05386B;
 }
 
+/* Favorite Button Star */
+
+.favorite-btn {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+}
+
+.favorite:hover {
+  cursor: pointer;
+}
+
+.favorite {
+  color: red;
+}
+
+/* Filter Form */
+
+.filter-form {
+  margin: 15px auto;
+}
+
+.filter-btn {
+  background-color: var(--buttons);
+  color: white;
+  margin-left: 5px;
+}
+
+.filter-btn:hover {
+  background-color: #03498f;
+}
+
+footer {
+  height: 6vh;
+}
+
+footer hr {
+  width: 80vh;
+  border-color: rgb(182, 182, 182);
+}
+
+footer h3 {
+  text-align: center;
+}
+
 @media(min-width: 950px) {
   .container {
     display: flex;
     flex-wrap: wrap;
-    width: 90vh;
+    width: 100vh;
   }
   .recipe-container {
-    width: 375px;
+    width: 425px;
     margin-left: 10px;
   }
+  .user-recipes-display {
+    flex-direction: row;
+    flex-wrap: wrap;
+   
+  }
+  .user-recipe-container {
+    width: 75vw;
+  }
 }
+
