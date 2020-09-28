@@ -47,7 +47,6 @@ class App extends Component {
   }
 
   findFavorites = (getRecipes) => {
-    console.log(getRecipes)
     if (getRecipes === 'all') {
       axios.get('/api/recipes').then(res => {
         this.setState({ selectedRecipes: res.data });

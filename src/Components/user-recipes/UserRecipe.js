@@ -6,7 +6,7 @@ class UserRecipe extends Component {
         this.state = {
             userInput: this.props.recipe.meal,
             edit: false,
-            isFavorite: true
+            isFavorite: this.props.recipe.favorite
         }
     }
 
@@ -33,8 +33,8 @@ class UserRecipe extends Component {
     }
 
     favoriteChange = () => {
-        this.setState({isFavorite: !this.state.isFavorite});
-        this.props.changeFavorite(this.props.recipe.id, this.state.isFavorite);
+        this.setState({isFavorite: !this.props.recipe.favorite});
+        this.props.changeFavorite(this.props.recipe.id, !this.props.recipe.favorite);
     }
 
     render() {
@@ -73,8 +73,8 @@ class UserRecipe extends Component {
                         <button className='btn add-btn edit-btn' onClick={this.toggleEdit}>Edit Name</button>
                     </section>
                     {this.state.isFavorite 
-                        ? <button className='favorite-btn' onClick={this.favoriteChange}>&#9734;</button>
-                    : <button className='favorite-btn favorite' onClick={this.favoriteChange}>&#9734;</button>
+                        ? <button className='favorite-btn favorite' onClick={this.favoriteChange}>&#9734;</button>
+                    : <button className='favorite-btn' onClick={this.favoriteChange}>&#9734;</button>
                     }
                     
                 </section> 
