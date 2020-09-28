@@ -4,7 +4,7 @@ class FilterRecipes extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 'all'
+            value: ''
         }
     }
 
@@ -21,7 +21,7 @@ class FilterRecipes extends Component {
     render(){
         return(
             <form className='filter-form'>
-                <label htmlFor='recipeFilter'>Filter Recipes By:</label>
+                <label htmlFor='recipeFilter' className='filter-label'>Filter Recipes By:</label>
                 <select value={this.state.value} onChange={this.handleChange}>
                     <option value='all'>All Recipes</option>
                     <option value='favorites'>Favorites</option>

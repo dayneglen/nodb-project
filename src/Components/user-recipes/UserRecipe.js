@@ -9,7 +9,7 @@ class UserRecipe extends Component {
             isFavorite: true
         }
     }
-    
+
     removeRecipe = () => {
         const { id } = this.props.recipe;
         const { deleteRecipe } = this.props;
@@ -48,7 +48,7 @@ class UserRecipe extends Component {
         ))
        
         return (
-            <section className='recipe-container container'>
+            <section className='recipe-container'>
                 {this.state.edit 
                     ? <form className='name-form'>
                         <input value={this.state.userInput} onChange={ (e) => this.handleInput(e)} />
@@ -67,8 +67,9 @@ class UserRecipe extends Component {
                             {ingredientList}
                         </div>
                     </ul>
-                    <section className='button-container'>
-                        <button className='btn add-btn user-btns' onClick={this.removeRecipe}>Delete Recipe</button>
+                    <hr/>
+                    <section className='button-container user-btns'>
+                        <button className='btn add-btn' onClick={this.removeRecipe}>Delete Recipe</button>
                         <button className='btn add-btn edit-btn' onClick={this.toggleEdit}>Edit Name</button>
                     </section>
                     {this.state.isFavorite 

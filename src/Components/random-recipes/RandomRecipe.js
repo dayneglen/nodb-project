@@ -30,6 +30,7 @@ const RandomRecipe = (props) => {
                     {ingredientList}
                 </div>
             </ul>
+            <hr/>
             <section className='button-container'>
                 <button className='btn add-btn' onClick={recipeReset}>Add Recipe</button>
             </section>

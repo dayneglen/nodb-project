@@ -26,7 +26,10 @@ class RecipeGenerator extends Component {
         ))
         return (
             <section className='container'>
-                {randomRecipe}
+            
+                 {randomRecipe}
+        
+               
             </section>
         )
     }

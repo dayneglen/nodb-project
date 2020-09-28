@@ -12,11 +12,14 @@ const RecipesCollection = (props) => {
         changeFavorite={props.favoriteChange}/>
     ))
     return (
-        <section className='user-recipe-container'>
-            <section>
-                <h1 className="user-recipes">Your Recipes</h1>
+        <section className='container'>
+            <section className='message-section'>
+                <section>
+                    <h1 className="user-recipes">Your Recipes</h1>
+                </section>
+                <FilterRecipes findFavorites={props.findFavorites} />
             </section>
-            <FilterRecipes findFavorites={props.findFavorites}/>
+            
             <section className='user-recipes-display'>
                 {recipesDisplay}
             </section>
