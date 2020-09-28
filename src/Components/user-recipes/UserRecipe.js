@@ -6,7 +6,13 @@ class UserRecipe extends Component {
         this.state = {
             userInput: this.props.recipe.meal,
             edit: false,
-            isFavorite: this.props.recipe.favorite
+            isFavorite: false
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(this.props.recipe.meal !== this.state.userInput) {
+            this.setState({userInput: this.props.recipe.meal})
         }
     }
 
@@ -33,7 +39,9 @@ class UserRecipe extends Component {
     }
 
     favoriteChange = () => {
-        this.setState({isFavorite: !this.props.recipe.favorite});
+        this.setState((state, props) => ({
+            isFavorite: !props.recipe.favorite
+        }));
         this.props.changeFavorite(this.props.recipe.id, !this.props.recipe.favorite);
     }
 
